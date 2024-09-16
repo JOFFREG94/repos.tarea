@@ -1,9 +1,9 @@
 # Crear una matriz 3D para almacenar datos de temperaturas
-# Primera dimensión: Ciudades (3 ciudades)
+# Primera dimensión: Ciudades (loja, cuenca, machala)
 # Segunda dimensión: Días de la semana (7 días)
 # Tercera dimensión: Semanas (4 semanas)
 temperaturas = [
-    [   # Ciudad 1
+    [   # loja
         [   # Semana 1
             {"day": "Lunes", "temp": 78},
             {"day": "Martes", "temp": 80},
@@ -41,7 +41,7 @@ temperaturas = [
             {"day": "Domingo", "temp": 91}
         ]
     ],
-    [   # Ciudad 2
+    [   # cuenca
         [   # Semana 1
             {"day": "Lunes", "temp": 62},
             {"day": "Martes", "temp": 64},
@@ -79,7 +79,7 @@ temperaturas = [
             {"day": "Domingo", "temp": 80}
         ]
     ],
-    [   # Ciudad 3
+    [   # machala
         [   # Semana 1
             {"day": "Lunes", "temp": 90},
             {"day": "Martes", "temp": 92},
@@ -120,7 +120,7 @@ temperaturas = [
 ]
 
 # Calcular el promedio de temperaturas para cada ciudad y semana
-ciudades = ["Ciudad 1", "Ciudad 2", "Ciudad 3"]
+ciudades = ["loja", "Cuenca", "machala"]
 for ciudad_idx, ciudad in enumerate(temperaturas):
     for semana_idx, semana in enumerate(ciudad):
         suma_temperaturas = sum([dia["temp"] for dia in semana])
