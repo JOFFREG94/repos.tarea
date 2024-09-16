@@ -1,149 +1,36 @@
-def calcular_promedio_temperaturas(temperaturas):
-    """
-    Calcula la temperatura promedio de cada ciudad durante el período de tiempo.
-
-    :param temperaturas: Una matriz 3D donde:
-                         - La primera dimensión representa ciudades.
-                         - La segunda dimensión representa semanas.
-                         - La tercera dimensión representa días de la semana.
-                         Cada día tiene un diccionario con las claves 'day' y 'temp'.
-    :return: Un diccionario con el nombre de la ciudad como clave y la temperatura promedio como valor.
-    """
-    promedios_ciudades = []
-
-    for ciudad in temperaturas:
-        suma_temperaturas = 0
-        total_dias = 0
-
-        for semana in ciudad:
-            for dia in semana:
-                suma_temperaturas += dia['temp']
-                total_dias += 1
-
-        promedio = suma_temperaturas / total_dias
-        promedios_ciudades.append(promedio)
-
-    return promedios_ciudades
-
-
-# Ejemplo de uso
-temperaturas = [
-    [  # Ciudad 1
-        [  # Semana 1
-            {"day": "Lunes", "temp": 78},
-            {"day": "Martes", "temp": 80},
-            {"day": "Miércoles", "temp": 82},
-            {"day": "Jueves", "temp": 79},
-            {"day": "Viernes", "temp": 85},
-            {"day": "Sábado", "temp": 88},
-            {"day": "Domingo", "temp": 92}
-        ],
-        [  # Semana 2
-            {"day": "Lunes", "temp": 76},
-            {"day": "Martes", "temp": 79},
-            {"day": "Miércoles", "temp": 83},
-            {"day": "Jueves", "temp": 81},
-            {"day": "Viernes", "temp": 87},
-            {"day": "Sábado", "temp": 89},
-            {"day": "Domingo", "temp": 93}
-        ],
-        [  # Semana 3
-            {"day": "Lunes", "temp": 77},
-            {"day": "Martes", "temp": 81},
-            {"day": "Miércoles", "temp": 85},
-            {"day": "Jueves", "temp": 82},
-            {"day": "Viernes", "temp": 88},
-            {"day": "Sábado", "temp": 91},
-            {"day": "Domingo", "temp": 95}
-        ],
-        [  # Semana 4
-            {"day": "Lunes", "temp": 75},
-            {"day": "Martes", "temp": 78},
-            {"day": "Miércoles", "temp": 80},
-            {"day": "Jueves", "temp": 79},
-            {"day": "Viernes", "temp": 84},
-            {"day": "Sábado", "temp": 87},
-            {"day": "Domingo", "temp": 91}
-        ]
+#Iteración de arreglos multidimensionales con bucles anidados
+temperatura = [
+    [#Loja
+        [12, 15, 17, 18, 20, 30, 55],#Semana 1
+        [12, 14, 23, 25, 28, 14, 10],#Semana 2
+        [10, 15, 15, 14, 18, 17, 18],#Semana 3
+        [10, 12, 14, 16, 18, 20, 22] #Semana 4
     ],
-    [  # Ciudad 2
-        [  # Semana 1
-            {"day": "Lunes", "temp": 62},
-            {"day": "Martes", "temp": 64},
-            {"day": "Miércoles", "temp": 68},
-            {"day": "Jueves", "temp": 70},
-            {"day": "Viernes", "temp": 73},
-            {"day": "Sábado", "temp": 75},
-            {"day": "Domingo", "temp": 79}
-        ],
-        [  # Semana 2
-            {"day": "Lunes", "temp": 63},
-            {"day": "Martes", "temp": 66},
-            {"day": "Miércoles", "temp": 70},
-            {"day": "Jueves", "temp": 72},
-            {"day": "Viernes", "temp": 75},
-            {"day": "Sábado", "temp": 77},
-            {"day": "Domingo", "temp": 81}
-        ],
-        [  # Semana 3
-            {"day": "Lunes", "temp": 61},
-            {"day": "Martes", "temp": 65},
-            {"day": "Miércoles", "temp": 68},
-            {"day": "Jueves", "temp": 70},
-            {"day": "Viernes", "temp": 72},
-            {"day": "Sábado", "temp": 76},
-            {"day": "Domingo", "temp": 80}
-        ],
-        [  # Semana 4
-            {"day": "Lunes", "temp": 64},
-            {"day": "Martes", "temp": 67},
-            {"day": "Miércoles", "temp": 69},
-            {"day": "Jueves", "temp": 71},
-            {"day": "Viernes", "temp": 74},
-            {"day": "Sábado", "temp": 77},
-            {"day": "Domingo", "temp": 80}
-        ]
+    [#Cuenca
+        [10, 12, 14, 15, 28, 26, 19],#Semana 1
+        [20, 25, 25, 22, 27, 32, 31],#Semana 2
+        [32, 25, 24, 27, 29, 24, 25],#Semana 3
+        [30, 31, 32, 33, 33, 32, 34] #Semana 4
     ],
-    [  # Ciudad 3
-        [  # Semana 1
-            {"day": "Lunes", "temp": 90},
-            {"day": "Martes", "temp": 92},
-            {"day": "Miércoles", "temp": 94},
-            {"day": "Jueves", "temp": 91},
-            {"day": "Viernes", "temp": 88},
-            {"day": "Sábado", "temp": 85},
-            {"day": "Domingo", "temp": 82}
-        ],
-        [  # Semana 2
-            {"day": "Lunes", "temp": 89},
-            {"day": "Martes", "temp": 91},
-            {"day": "Miércoles", "temp": 93},
-            {"day": "Jueves", "temp": 90},
-            {"day": "Viernes", "temp": 87},
-            {"day": "Sábado", "temp": 84},
-            {"day": "Domingo", "temp": 81}
-        ],
-        [  # Semana 3
-            {"day": "Lunes", "temp": 91},
-            {"day": "Martes", "temp": 93},
-            {"day": "Miércoles", "temp": 95},
-            {"day": "Jueves", "temp": 92},
-            {"day": "Viernes", "temp": 89},
-            {"day": "Sábado", "temp": 86},
-            {"day": "Domingo", "temp": 83}
-        ],
-        [  # Semana 4
-            {"day": "Lunes", "temp": 88},
-            {"day": "Martes", "temp": 90},
-            {"day": "Miércoles", "temp": 92},
-            {"day": "Jueves", "temp": 89},
-            {"day": "Viernes", "temp": 86},
-            {"day": "Sábado", "temp": 83},
-            {"day": "Domingo", "temp": 80}
-        ]
+    [#Machala
+        [20, 25, 23, 24, 21, 20, 20],#Semana 1
+        [10, 14, 17, 15, 14, 17, 18],#Semana 2
+        [14, 15, 20, 25, 52, 24, 20],#Semana 3
+        [20, 21, 21, 24, 21, 20, 22] #Semana 4
     ]
 ]
 
-# Llamar a la función y mostrar los resultados
-resultados = calcular_promedio_temperaturas(temperaturas)
-print(resultados)
+#Funcion para calcular la temperatura de una ciudad y semana solicitada por el usuario
+
+def prm_temperatura(para_temperatura, ciudad, semana):
+    contador_temperatua =0
+    promedio_temperatura=0
+    for temperatura in range(len(para_temperatura[ciudad][semana])):
+        contador_temperatua+=para_temperatura[ciudad][semana][temperatura]
+    promedio_temperatura=contador_temperatua/len(para_temperatura[ciudad][semana])
+
+    return promedio_temperatura
+
+
+resultado_prom=prm_temperatura(temperatura, 1,0 )
+print("El promedio de temperatura es: ",resultado_prom)
