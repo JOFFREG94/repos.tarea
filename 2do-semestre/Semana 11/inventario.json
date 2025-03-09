@@ -1,0 +1,32 @@
+[
+    {
+        "id": "002",
+        "nombre": "Mouse",
+        "cantidad": 25,
+        "precio": 15.99
+    },
+    {
+        "id": "003",
+        "nombre": "Teclado",
+        "cantidad": 20,
+        "precio": 25.5
+    },
+    {
+        "id": "004",
+        "nombre": "Monitor",
+        "cantidad": 8,
+        "precio": 150.75
+    },
+    {
+        "id": "005",
+        "nombre": "cpu",
+        "cantidad": 5,
+        "precio": 220.0
+    },
+    {
+        "id": "001",
+        "nombre": "Laptop",
+        "cantidad": 10,
+        "precio": 750.99
+    }
+]
