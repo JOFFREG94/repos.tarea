@@ -28,5 +28,11 @@
         "nombre": "Laptop",
         "cantidad": 10,
         "precio": 750.99
+    },
+    {
+        "id": "001545",
+        "nombre": "mesa",
+        "cantidad": 5,
+        "precio": 25.99
     }
 ]
