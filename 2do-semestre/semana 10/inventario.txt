@@ -1,0 +1,6 @@
+{
+    "mesa": {
+        "cantidad": 10,
+        "precio": 19.99
+    }
+}
